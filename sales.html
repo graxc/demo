@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Продажи</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Мои продажи</h2>
+      <form>
+        <input type="number" placeholder="Номер продажи" required />
+        <input type="text" placeholder="Должность" required />
+        <input type="text" placeholder="Имя" required />
+        <input type="number" placeholder="Сумма" required />
+        <input type="date" required />
+
+        <select required>
+          <option value="">Выберите статус</option>
+          <option>Выполнено</option>
+          <option>В ожидании</option>
+          <option>Отменено</option>
+        </select>
+
+        <label><input type="checkbox" id="otherStatus" /> Иной статус</label>
+        <textarea
+          id="otherStatusText"
+          placeholder="Опишите статус..."
+          style="display: none"
+        ></textarea>
+
+        <button type="submit">Добавить продажу</button>
+      </form>
+    </div>
+
+    <script>
+      const otherCheckbox = document.getElementById("otherStatus");
+      const statusText = document.getElementById("otherStatusText");
+      otherCheckbox.addEventListener("change", () => {
+        statusText.style.display = otherCheckbox.checked ? "block" : "none";
+      });
+    </script>
+  </body>
+</html>
